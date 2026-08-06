@@ -12,21 +12,40 @@ export default function CatalogPage() {
     <main>
       <section className="section">
         <div className="container">
-          <div className="section-heading">
-            <span className="badge">Catalog</span>
-            <h2>Explore the full Nexora product catalog.</h2>
-            <p className="section-subtitle">
-              Browse our product families, download the catalog, and see how Nexora supports export-ready construction projects.
-            </p>
+          <div className="catalog-hero card">
+            <div className="catalog-hero-copy">
+              <span className="badge">Catalog</span>
+              <h2>Explore the full Nexora product catalog.</h2>
+              <p className="section-subtitle">
+                Discover our adhesive, epoxy, waterproofing, grout, and wall-finishing systems in one export-ready brochure experience.
+              </p>
+              <div className="panel-actions">
+                <a className="button" href="/nexora-catalog.txt" download>
+                  Download full catalog
+                </a>
+                <button type="button" className="button secondary" onClick={handlePrint}>
+                  Print brochure
+                </button>
+                <a className="button secondary" href="/">
+                  Back to home
+                </a>
+              </div>
+            </div>
+            <div className="catalog-highlight">
+              <h3>Why Nexora</h3>
+              <ul className="catalog-bullet-list">
+                <li>Premium chemistry for demanding construction sites</li>
+                <li>Technical support for specification and sourcing</li>
+                <li>Export-ready product packaging and reliability</li>
+              </ul>
+            </div>
           </div>
 
-          <div className="panel-actions">
-            <a className="button" href="/nexora-catalog.txt" download>
-              Download full catalog
-            </a>
-            <button type="button" className="button secondary" onClick={handlePrint}>
-              Print brochure
-            </button>
+          <div className="section-heading" style={{ marginTop: "2rem" }}>
+            <h3>Product families</h3>
+            <p className="section-subtitle">
+              Each category is designed for a specific installation challenge, from tile bonding to waterproofing and finishing.
+            </p>
           </div>
 
           <div className="grid category-grid">

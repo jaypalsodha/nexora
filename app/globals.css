@@ -179,6 +179,37 @@ button,
 
 .panel-actions {
   margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.catalog-hero {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  align-items: start;
+}
+
+.catalog-hero-copy h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.catalog-highlight {
+  background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+  border: 1px solid rgba(67, 56, 202, 0.12);
+  border-radius: 1.25rem;
+  padding: 1.4rem;
+}
+
+.catalog-bullet-list {
+  padding-left: 1rem;
+  margin: 0;
+  display: grid;
+  gap: 0.7rem;
+  color: #334155;
 }
 
 .testimonials-grid {
