@@ -1,84 +1,190 @@
 const products = [
-  { name: "Nexo Eco", type: "Type 1, C1T" },
-  { name: "Nexo Smart", type: "Type 2, C2T" },
-  { name: "Nexo Flex", type: "Type 3, C2TE" },
-  { name: "Nexo Flex +", type: "Type 3, C2TES1" },
-  { name: "Nexo Ultra", type: "Type 4, C2TES1" },
-  { name: "Nexo Advance", type: "Type 4, C2TES2" },
-  { name: "Nexo Supreme", type: "Type 5, R2T PU Adhesive" },
-  { name: "Nexo Grout", type: "Premium Tile Grout" },
-  { name: "Nexo Grout + Stucco Grout", type: "Advanced Grout System" },
-  { name: "Nexo Pro + Epoxy", type: "Epoxy Adhesive System" },
-  { name: "BJM Plaster Waterproofing", type: "Waterproof Plaster Treatment" },
-  { name: "Block Joining Mortar", type: "Structural Masonry Adhesive" },
-  { name: "Nexo Wall Putty", type: "Surface Finishing Compound" },
+  {
+    name: "Nexo Eco",
+    category: "Type 1, C1T",
+    description: "A dependable tile adhesive for interior installations with consistent workability.",
+  },
+  {
+    name: "Nexo Smart",
+    category: "Type 2, C2T",
+    description: "Enhanced adhesive for increased bond strength and improved flexibility.",
+  },
+  {
+    name: "Nexo Flex",
+    category: "Type 3, C2TE",
+    description: "Flexible polymer-modified adhesive for high-stress tile applications.",
+  },
+  {
+    name: "Nexo Flex +",
+    category: "Type 3, C2TES1",
+    description: "High-performance adhesive with forgiving slip resistance and superior adhesion.",
+  },
+  {
+    name: "Nexo Ultra",
+    category: "Type 4, C2TES1",
+    description: "Premium adhesive for heavy-duty industrial and commercial tile work.",
+  },
+  {
+    name: "Nexo Advance",
+    category: "Type 4, C2TES2",
+    description: "Advanced polymer adhesive for demanding installations and wet areas.",
+  },
+  {
+    name: "Nexo Supreme",
+    category: "Type 5, R2T PU Adhesive",
+    description: "Polyurethane adhesive for resilient, long-lasting bonding and chemical resistance.",
+  },
+  {
+    name: "Nexo Grout",
+    category: "Standard Cement Grout",
+    description: "Smooth finish grout formulated for tile joints and easy cleaning.",
+  },
+  {
+    name: "Nexo Grout + Stucco Grout",
+    category: "Advanced Grout System",
+    description: "Dual-purpose grout and render system for polished, durable surfaces.",
+  },
+  {
+    name: "Nexo Pro + Epoxy",
+    category: "Epoxy Adhesive System",
+    description: "High-strength epoxy for structural bonding and chemical protection.",
+  },
+  {
+    name: "BJM Plaster Waterproofing",
+    category: "Waterproof Plaster",
+    description: "Waterproofing mortar designed to protect plaster and masonry surfaces.",
+  },
+  {
+    name: "Block Joining Mortar",
+    category: "Structural Mortar",
+    description: "Reliable mortar for strong, stable block bonding and masonry joints.",
+  },
+  {
+    name: "Nexo Wall Putty",
+    category: "Surface Finishing Compound",
+    description: "Fine finishing putty for smooth, paint-ready walls and ceilings.",
+  },
 ];
 
 const highlights = [
-  "15 years of trusted adhesive and construction chemistry expertise",
-  "Growing global presence across 8 countries",
-  "High-performance tile adhesives, epoxies, grouts, and waterproofing",
-  "Manufacturing and exporting premium construction solutions",
+  {
+    title: "15+ years",
+    detail: "Adhesive expertise built on reliable performance.",
+  },
+  {
+    title: "8 countries",
+    detail: "Export-ready products supporting a growing international network.",
+  },
+  {
+    title: "Premium quality",
+    detail: "Manufactured to meet global construction and export standards.",
+  },
+  {
+    title: "Trusted support",
+    detail: "Technical guidance from specification to site delivery.",
+  },
+];
+
+const pillars = [
+  {
+    title: "Performance",
+    body: "Products engineered for durability, adhesion, and long-term finish quality.",
+  },
+  {
+    title: "Innovation",
+    body: "Modern formulas that reduce installation time and improve ease of use.",
+  },
+  {
+    title: "Export-ready",
+    body: "Solutions designed for international markets and global logistics.",
+  },
 ];
 
 export default function HomePage() {
   return (
     <main>
-      <section className="section hero">
-        <div className="container hero-grid">
-          <div>
-            <span className="badge">Nexora Global Industries</span>
-            <h1 className="section-title">Premium adhesives, grout, epoxy, and waterproofing solutions.</h1>
-            <p className="subtitle">
-              Manufacturer and exporter with over 15 years of experience delivering proven tile adhesives, cement grouts, polyurethane systems, and construction chemicals worldwide.
-            </p>
-            <div style={{ marginTop: "2rem" }}>
-              <button className="button" type="button">View Product Range</button>
-            </div>
-          </div>
+      <header className="site-header">
+        <div className="container header-inner">
+          <a className="brand" href="#hero">
+            Nexora
+          </a>
+          <nav className="nav-links">
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-          <div className="spotlight">
-            <div style={{ marginBottom: "1rem" }}>
-              <p className="badge">8 countries and growing</p>
-            </div>
-            <h2 style={{ margin: 0, fontSize: "1.9rem" }}>Trusted performance for tile installers and construction partners.</h2>
-            <p style={{ marginTop: "1rem", color: "#475569" }}>
-              We craft specialty adhesives and cement-based products that simplify installation, protect surfaces, and improve long-lasting finish quality.
+      <section id="hero" className="section hero">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <span className="eyebrow">Nexora Global Industries</span>
+            <h1>Premium adhesives, epoxy, grout, and waterproofing for modern construction.</h1>
+            <p className="subtitle">
+              Trusted manufacturer and exporter with over 15 years of experience building products for tile, masonry, and surface finishing applications.
             </p>
-            <div className="features" style={{ marginTop: "1.75rem" }}>
+            <div className="hero-actions">
+              <a className="button" href="#products">
+                View products
+              </a>
+              <a className="button secondary" href="#contact">
+                Request a quote
+              </a>
+            </div>
+            <div className="stats-grid">
               {highlights.map((item) => (
-                <div key={item} className="feature-card">
-                  <p style={{ margin: 0, fontWeight: 600 }}>{item}</p>
-                </div>
+                <article key={item.title} className="stat-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                </article>
               ))}
             </div>
           </div>
+
+          <aside className="hero-panel">
+            <div className="panel-card">
+              <p className="badge">Global expertise</p>
+              <h2>Build stronger installations with Nexora.</h2>
+              <p>
+                Our portfolio spans high-performance tile adhesives, epoxy systems, cement grouts, waterproofing, and finishing compounds for professional applications.
+              </p>
+              <div className="feature-list">
+                <div>
+                  <strong>• Export-ready quality</strong>
+                </div>
+                <div>
+                  <strong>• Certified performance</strong>
+                </div>
+                <div>
+                  <strong>• Site-ready convenience</strong>
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section className="section">
+      <section id="products" className="section section-alt">
         <div className="container">
-          <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", alignItems: "center" }}>
-            <div>
-              <p className="badge">Product portfolio</p>
-              <h2 className="section-title">Complete range for tile, plaster, and masonry applications.</h2>
-            </div>
+          <div className="section-heading">
+            <span className="badge">Product range</span>
+            <h2>Complete systems for tiles, plaster, and masonry.</h2>
+            <p className="section-subtitle">
+              Choose from our full range of adhesives, grouts, epoxies, waterproofing, and surface finishing solutions.
+            </p>
           </div>
 
-          <div className="grid grid-3" style={{ marginTop: "2rem" }}>
+          <div className="grid product-grid">
             {products.map((product) => (
-              <article key={product.name} className="card">
-                <h3 style={{ marginTop: 0 }}>{product.name}</h3>
-                <p style={{ color: "#475569", marginBottom: "1.5rem" }}>{product.type}</p>
-                <ul className="list">
-                  <li className="list-item">
-                    <strong>•</strong>
-                    <span>Reliable strength and adhesion</span>
-                  </li>
-                  <li className="list-item">
-                    <strong>•</strong>
-                    <span>Engineered for fast, clean installation</span>
-                  </li>
+              <article key={product.name} className="card product-card">
+                <div className="product-badge">{product.category}</div>
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <ul className="list mini-list">
+                  <li>High bond strength</li>
+                  <li>Site-ready performance</li>
+                  <li>Suitable for export markets</li>
                 </ul>
               </article>
             ))}
@@ -86,26 +192,60 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: "2rem", paddingBottom: "3rem" }}>
+      <section id="about" className="section">
         <div className="container">
-          <div className="card card-strong">
-            <h2 style={{ marginTop: 0 }}>Build with confidence.</h2>
-            <p style={{ margin: "1rem 0 0", lineHeight: 1.8 }}>
-              Nexora brings more than a decade of product development for premium tile adhesives, cementitious systems, and surface finishes. Our product line is built for modern construction standards and international export quality.
+          <div className="section-heading">
+            <span className="badge">Why Nexora</span>
+            <h2>Trusted performance backed by industry experience.</h2>
+            <p className="section-subtitle">
+              We combine proven chemistry, manufacturing discipline, and export-ready quality to deliver dependable construction materials.
             </p>
-            <div style={{ marginTop: "1.75rem", display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-              <span className="badge">Reliable supply chain</span>
-              <span className="badge">Global export quality</span>
-              <span className="badge">Technical support</span>
+          </div>
+
+          <div className="grid grid-3 pillar-grid">
+            {pillars.map((pillar) => (
+              <article key={pillar.title} className="card pillar-card">
+                <h3>{pillar.title}</h3>
+                <p>{pillar.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="section section-contact">
+        <div className="container contact-grid">
+          <div className="contact-copy">
+            <span className="badge">Get in touch</span>
+            <h2>Ready to partner on your next construction project?</h2>
+            <p className="section-subtitle">
+              Contact our team for product details, technical support, or distribution inquiries.
+            </p>
+            <div className="contact-details">
+              <div>
+                <h3>Email</h3>
+                <p>sales@nexora.com</p>
+              </div>
+              <div>
+                <h3>Location</h3>
+                <p>India & international distribution</p>
+              </div>
             </div>
+          </div>
+          <div className="contact-card">
+            <h3>Request a quote</h3>
+            <p>Share your project details and we’ll connect you with the right product recommendations.</p>
+            <a className="button" href="mailto:sales@nexora.com?subject=Quote%20Request%20for%20Nexora%20Products">
+              Email sales@nexora.com
+            </a>
           </div>
         </div>
       </section>
 
       <footer className="footer">
-        <div className="container">
-          <p>Manufacturer & Exporter of Premium Tiles Adhesive, PU Adhesive, Epoxy, Cement Grout, Ready Mix Plaster.</p>
-          <p>Designed for deployment on Vercel and ready for GitHub repository setup.</p>
+        <div className="container footer-inner">
+          <p>Nexora Global Industries Pvt Ltd — Manufacturer & exporter of premium construction chemicals.</p>
+          <p>Ready for Vercel deployment and optimized for modern export markets.</p>
         </div>
       </footer>
     </main>
