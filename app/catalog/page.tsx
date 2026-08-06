@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { ChangeEvent, useCallback, useMemo, useState } from "react";
 import { categories, products } from "../../lib/data";
 
 const comparisonNames = [
@@ -11,6 +11,29 @@ const comparisonNames = [
 ];
 
 export default function CatalogPage() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const catalogCategories = useMemo(
+    () => ["All", ...categories.map((category) => category.title)],
+    []
+  );
+
+  const filteredProducts = useMemo(
+    () =>
+      products.filter((product) => {
+        const matchesCategory =
+          selectedCategory === "All" || product.category === selectedCategory;
+        const search = searchQuery.trim().toLowerCase();
+        const matchesSearch =
+          !search ||
+          product.name.toLowerCase().includes(search) ||
+          product.benefit.toLowerCase().includes(search) ||
+          product.category.toLowerCase().includes(search);
+        return matchesCategory && matchesSearch;
+      }),
+    [selectedCategory, searchQuery]
+  );
   const handlePrint = useCallback(() => {
     window.print();
   }, []);
@@ -67,9 +90,68 @@ export default function CatalogPage() {
           </div>
 
           <div className="section-heading" style={{ marginTop: "2rem" }}>
-            <h3>Product specifications</h3>
+            <h3>Product catalog</h3>
             <p className="section-subtitle">
               A curated selection of our top-performing adhesives, grout, waterproofing, and finishing products with key application details.
+            </p>
+          </div>
+
+          <div className="catalog-filters">
+            <div className="filter-group">
+              <label htmlFor="category-select">Category</label>
+              <select
+                id="category-select"
+                value={selectedCategory}
+                onChange={(event: ChangeEvent<HTMLSelectElement>) => setSelectedCategory(event.target.value)}
+              >
+                {catalogCategories.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="filter-group">
+              <label htmlFor="search-input">Search</label>
+              <input
+                id="search-input"
+                type="search"
+                value={searchQuery}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => setSearchQuery(event.target.value)}
+                placeholder="Search by product name, benefit, or category"
+              />
+            </div>
+          </div>
+
+          <div className="table-wrapper">
+            <table className="catalog-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Category</th>
+                  <th>Type</th>
+                  <th>Benefit</th>
+                  <th>Specs</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredProducts.map((product) => (
+                  <tr key={product.name}>
+                    <td>{product.name}</td>
+                    <td>{product.category}</td>
+                    <td>{product.type}</td>
+                    <td>{product.benefit}</td>
+                    <td>{product.specs.join(" • ")}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="section-heading" style={{ marginTop: "2rem" }}>
+            <h3>Product specifications</h3>
+            <p className="section-subtitle">
+              A larger view of our catalog with detailed cards for every product.
             </p>
           </div>
 
