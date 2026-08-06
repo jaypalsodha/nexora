@@ -31,78 +31,143 @@ export const products = [
     category: "Tile Adhesives",
     type: "Type 1, C1T",
     benefit: "Reliable interior adhesive for ceramic tile installations.",
+    specs: [
+      "Coverage: 4–5 m² per 20 kg bag",
+      "Open time: 20–25 minutes",
+      "Suitable for porous substrates and underfloor heating",
+    ],
   },
   {
     name: "Nexo Smart",
     category: "Tile Adhesives",
     type: "Type 2, C2T",
     benefit: "Improved bond strength and installation flexibility.",
+    specs: [
+      "Coverage: 3.5–4.5 m² per 20 kg bag",
+      "Slip resistance for vertical tile applications",
+      "Interior and exterior tile installations",
+    ],
   },
   {
     name: "Nexo Flex",
     category: "Tile Adhesives",
     type: "Type 3, C2TE",
     benefit: "Flexible formula for movement-prone surfaces.",
+    specs: [
+      "Flexibility for dynamic tiles",
+      "Water-resistant performance",
+      "Recommended for balconies and facades",
+    ],
   },
   {
     name: "Nexo Flex +",
     category: "Tile Adhesives",
     type: "Type 3, C2TES1",
     benefit: "Slip-resistant adhesive for vertical and heavy-duty tiling.",
+    specs: [
+      "High initial grab for large-format tiles",
+      "Extended open time for precision setting",
+      "Suitable for stone and porcelain",
+    ],
   },
   {
     name: "Nexo Ultra",
     category: "Tile Adhesives",
     type: "Type 4, C2TES1",
     benefit: "Premium adhesive built for industrial and commercial settings.",
+    specs: [
+      "High-performance bond strength",
+      "Suitable for heavy traffic areas",
+      "Excellent adhesion on challenging substrates",
+    ],
   },
   {
     name: "Nexo Advance",
     category: "Tile Adhesives",
     type: "Type 4, C2TES2",
     benefit: "Water-resistant adhesive for wet area applications.",
+    specs: [
+      "Waterproof and flexible",
+      "Recommended for showers and pools",
+      "Strong bond in humid environments",
+    ],
   },
   {
     name: "Nexo Supreme",
     category: "PU Adhesives",
     type: "Type 5, R2T PU Adhesive",
     benefit: "Polyurethane bonding with high durability and chemical resistance.",
+    specs: [
+      "Suitable for engineered stone and glass tiles",
+      "High chemical resistance",
+      "Excellent peel strength",
+    ],
   },
   {
     name: "Nexo Grout",
     category: "Grouts & Plasters",
     type: "Cement Grout",
     benefit: "Smooth finish grout for tiled joints and easy maintenance.",
+    specs: [
+      "Shrinkage-controlled formula",
+      "Joint width 2–10 mm",
+      "Cures to a durable, stain-resistant finish",
+    ],
   },
   {
     name: "Nexo Grout + Stucco Grout",
     category: "Grouts & Plasters",
     type: "Dual System",
     benefit: "A complete grout and render solution for polished surfaces.",
+    specs: [
+      "Dual-purpose grout and skim finish",
+      "Improves surface durability",
+      "Optimized for decorative render work",
+    ],
   },
   {
     name: "Nexo Pro + Epoxy",
     category: "Epoxy Systems",
     type: "Epoxy Adhesive System",
     benefit: "Strong, chemical-resistant adhesive for demanding installs.",
+    specs: [
+      "Fast cure for floor and joint repair",
+      "High compressive strength",
+      "Excellent resistance to oils and chemicals",
+    ],
   },
   {
     name: "BJM Plaster Waterproofing",
     category: "Waterproofing",
     type: "Waterproof Plaster",
     benefit: "Protects plaster and masonry from moisture ingress.",
+    specs: [
+      "Crack-bridging membrane",
+      "Applies over masonry and concrete",
+      "Quick-curing and paintable",
+    ],
   },
   {
     name: "Block Joining Mortar",
     category: "Grouts & Plasters",
     type: "Structural Mortar",
     benefit: "Stable mortar for block bonding and masonry work.",
+    specs: [
+      "High early strength",
+      "Designed for structural block joints",
+      "Good workability with minimal shrinkage",
+    ],
   },
   {
     name: "Nexo Wall Putty",
     category: "Wall Putty",
     type: "Finishing Compound",
     benefit: "Fine finishing putty for smooth, paint-ready walls.",
+    specs: [
+      "Smooth, easy-to-sand surface",
+      "Improves paint adhesion",
+      "Covers minor surface defects",
+    ],
   },
 ];
 

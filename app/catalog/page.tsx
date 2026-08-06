@@ -58,19 +58,26 @@ export default function CatalogPage() {
           </div>
 
           <div className="section-heading" style={{ marginTop: "2rem" }}>
-            <h3>Featured products</h3>
+            <h3>Product specifications</h3>
             <p className="section-subtitle">
-              A curated selection of our top-performing adhesives, grout, waterproofing, and finishing products.
+              A curated selection of our top-performing adhesives, grout, waterproofing, and finishing products with key application details.
             </p>
           </div>
 
-          <div className="grid product-grid">
+          <div className="grid expanded-product-grid">
             {products.map((product) => (
-              <article key={product.name} className="card product-card">
-                <div className="product-badge">{product.type}</div>
+              <article key={product.name} className="card product-card product-spec-card">
+                <div className="product-card-header">
+                  <div className="product-badge">{product.type}</div>
+                  <span className="product-category">{product.category}</span>
+                </div>
                 <h3>{product.name}</h3>
                 <p>{product.benefit}</p>
-                <div className="product-extra">{product.category}</div>
+                <ul className="product-specs">
+                  {product.specs.map((spec) => (
+                    <li key={spec}>{spec}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
