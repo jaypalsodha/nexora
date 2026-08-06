@@ -38,6 +38,10 @@ npm run start
 
 This project can be deployed to Vercel directly by linking the repository and using the default Next.js settings.
 
+## Catalog
+
+A printable product brochure is available at `/catalog`, and a downloadable catalog text file is available at `/nexora-catalog.txt`.
+
 ## GitHub
 
 If you want to push this project to GitHub:
