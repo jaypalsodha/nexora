@@ -3,10 +3,19 @@
 import { useCallback } from "react";
 import { categories, products } from "../../lib/data";
 
+const comparisonNames = [
+  "Nexo Eco",
+  "Nexo Flex +",
+  "Nexo Supreme",
+  "BJM Plaster Waterproofing",
+];
+
 export default function CatalogPage() {
   const handlePrint = useCallback(() => {
     window.print();
   }, []);
+
+  const comparisonItems = products.filter((product) => comparisonNames.includes(product.name));
 
   return (
     <main>
@@ -78,6 +87,35 @@ export default function CatalogPage() {
                     <li key={spec}>{spec}</li>
                   ))}
                 </ul>
+              </article>
+            ))}
+          </div>
+
+          <div className="section-heading" style={{ marginTop: "2rem" }}>
+            <h3>Top product comparison</h3>
+            <p className="section-subtitle">
+              Compare Nexora’s flagship systems side-by-side to choose the right solution for your next project.
+            </p>
+          </div>
+
+          <div className="grid comparison-grid">
+            {comparisonItems.map((product) => (
+              <article key={product.name} className="card comparison-card">
+                <div className="comparison-card-header">
+                  <div>
+                    <span className="product-badge">{product.type}</span>
+                    <h4>{product.name}</h4>
+                    <p className="product-category">{product.category}</p>
+                  </div>
+                </div>
+                <div className="comparison-details">
+                  <p>{product.benefit}</p>
+                  <ul className="product-specs comparison-specs">
+                    {product.specs.map((spec) => (
+                      <li key={spec}>{spec}</li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             ))}
           </div>

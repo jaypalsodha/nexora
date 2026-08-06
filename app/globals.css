@@ -281,6 +281,39 @@ button,
   line-height: 1.7;
 }
 
+.comparison-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.comparison-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comparison-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.comparison-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.comparison-specs {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.comparison-specs li {
+  color: #475569;
+}
+
 .testimonials-grid {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
