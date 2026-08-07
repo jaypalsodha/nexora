@@ -34,7 +34,8 @@ export default function HomePage() {
       <header className="site-header">
         <div className="container header-inner">
           <a className="brand" href="#hero">
-            Nexora
+            <span className="brand-name">Nexora</span>
+            <span className="brand-tagline">Innovation that builds the future</span>
           </a>
           <nav className="nav-links">
             <a href="#products">Products</a>
