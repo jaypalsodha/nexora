@@ -1,7 +1,7 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useMemo, useState } from "react";
-import { categories, filterCategories, pillars, products, stats, testimonials } from "../lib/data";
+import { applications, categories, filterCategories, pillars, products, stats, testimonials, trustPoints } from "../lib/data";
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -55,11 +55,11 @@ export default function HomePage() {
               Nexora Global Industries delivers premium tile adhesives, PU systems, epoxy, grout, waterproofing, and finishing products served across 8 countries.
             </p>
             <div className="hero-actions">
-              <a className="button" href="#products">
-                View products
+              <a className="button" href="#contact">
+                Request technical sheet
               </a>
-              <a className="button secondary" href="#contact">
-                Request quote
+              <a className="button secondary" href="#products">
+                Explore products
               </a>
             </div>
             <div className="hero-stats">
@@ -97,7 +97,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="categories" className="section section-alt">
+      <section className="section section-alt">
+        <div className="container trust-grid">
+          <div className="trust-copy">
+            <span className="badge">Why Nexora</span>
+            <h2>Trusted by contractors, distributors, and project teams.</h2>
+            <p className="section-subtitle">
+              We combine product reliability, export-ready support, and practical technical guidance to help buyers move faster with confidence.
+            </p>
+            <div className="trust-points">
+              {trustPoints.map((point) => (
+                <div key={point.title} className="trust-point">
+                  <strong>{point.title}</strong>
+                  <span>{point.description}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="trust-cta">
+            <h3>Need the right system for your project?</h3>
+            <p>Share your application and we’ll recommend the most suitable Nexora solution.</p>
+            <a className="button" href="#contact">
+              Talk to sales
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="categories" className="section">
         <div className="container">
           <div className="section-heading">
             <span className="badge">Solutions</span>
@@ -110,6 +138,27 @@ export default function HomePage() {
           <div className="grid category-grid">
             {categories.map((item) => (
               <article key={item.title} className="card category-card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="applications" className="section section-alt">
+        <div className="container">
+          <div className="section-heading">
+            <span className="badge">Applications</span>
+            <h2>Built for residential, commercial, and industrial workflows.</h2>
+            <p className="section-subtitle">
+              Whether your team is fitting out a hotel, supporting a distributor program, or delivering a high-spec residential project, Nexora has a fit-for-purpose system.
+            </p>
+          </div>
+
+          <div className="grid application-grid">
+            {applications.map((item) => (
+              <article key={item.title} className="card application-card">
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </article>
@@ -147,7 +196,10 @@ export default function HomePage() {
                 <div className="product-badge">{product.type}</div>
                 <h3>{product.name}</h3>
                 <p>{product.benefit}</p>
-                <div className="product-extra">{product.category}</div>
+                <div className="product-meta">
+                  <span>{product.category}</span>
+                  <span>{product.specs[0]}</span>
+                </div>
               </article>
             ))}
           </div>

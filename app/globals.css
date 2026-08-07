@@ -613,6 +613,9 @@ button,
 .section-heading h2,
 .section-heading .section-title {
   margin: 0.5rem 0 0;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
 }
 
 .section-subtitle,
@@ -631,6 +634,10 @@ button,
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.application-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 .product-grid {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
@@ -642,7 +649,8 @@ button,
 .category-card,
 .product-card,
 .pillar-card,
-.contact-card {
+.contact-card,
+.application-card {
   background: rgba(255, 255, 255, 0.97);
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 1.5rem;
@@ -651,7 +659,13 @@ button,
 }
 
 .product-card {
-  min-height: 220px;
+  min-height: 240px;
+}
+
+.application-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
 .product-badge {
@@ -665,9 +679,23 @@ button,
   font-size: 0.9rem;
 }
 
+.product-meta {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.product-meta span:last-child {
+  color: #334155;
+  font-weight: 600;
+}
+
 .category-card h3,
 .pillar-card h3,
-.contact-card h3 {
+.contact-card h3,
+.application-card h3 {
   margin-top: 0;
 }
 
@@ -742,6 +770,54 @@ button,
   outline: none;
   border-color: #4338ca;
   box-shadow: 0 0 0 4px rgba(67, 56, 202, 0.1);
+}
+
+.trust-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.4fr 0.9fr;
+  align-items: start;
+}
+
+.trust-points {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+
+.trust-point {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 1rem;
+}
+
+.trust-point strong {
+  color: #0f172a;
+}
+
+.trust-point span {
+  color: #475569;
+}
+
+.trust-cta {
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #eef2ff 0%, #f8fbff 100%);
+  border: 1px solid rgba(67, 56, 202, 0.12);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.06);
+}
+
+.trust-cta h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.trust-cta p {
+  margin: 0 0 1rem;
+  color: #475569;
 }
 
 .filter-bar {

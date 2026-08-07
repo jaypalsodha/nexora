@@ -186,6 +186,40 @@ export const stats = [
   },
 ];
 
+export const trustPoints = [
+  {
+    title: "Manufactured for export-ready performance",
+    description: "Reliable chemistry, consistent batch quality, and packaging built for international supply chains.",
+  },
+  {
+    title: "Built for project efficiency",
+    description: "Products that support faster installation, less rework, and cleaner handover on site.",
+  },
+  {
+    title: "Technical guidance that goes further",
+    description: "From product selection to site support, we help teams make the right call faster.",
+  },
+];
+
+export const applications = [
+  {
+    title: "Residential projects",
+    description: "Adhesives, grouts, and finishing systems for homes, renovations, and premium interiors.",
+  },
+  {
+    title: "Commercial fit-outs",
+    description: "Durable solutions for hotels, retail, offices, and high-traffic public spaces.",
+  },
+  {
+    title: "Industrial and wet-area use",
+    description: "High-strength systems for demanding environments, moisture exposure, and long-life performance.",
+  },
+  {
+    title: "Distributor and sourcing programs",
+    description: "Flexible product portfolios and export support for procurement teams and channel partners.",
+  },
+];
+
 export const pillars = [
   {
     title: "Quality Assured",
