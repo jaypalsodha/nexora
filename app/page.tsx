@@ -26,7 +26,7 @@ export default function HomePage() {
     const body = encodeURIComponent(
       `Name: ${contact.name}\nCompany: ${contact.company}\nEmail: ${contact.email}\nProject details: ${contact.details}`
     );
-    window.location.href = `mailto:sales@nexora.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:sales@nexoraindia.org?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -263,12 +263,19 @@ export default function HomePage() {
             </p>
             <div className="contact-details">
               <div>
-                <h3>Email</h3>
-                <p>sales@nexora.com</p>
+                <h3>Emails</h3>
+                <p>sales@nexoraindia.org</p>
+                <p>info@nexoraindia.org</p>
               </div>
               <div>
-                <h3>Service</h3>
-                <p>Technical support, sourcing, and international distribution</p>
+                <h3>Customer care</h3>
+                <p>+91 92748 58900</p>
+              </div>
+              <div>
+                <h3>Address</h3>
+                <p>Shade No 2, SURVEY NO-1525/119</p>
+                <p>Near Navkar Heights, off. S.P. Ring Road, Ognaj</p>
+                <p>Ahmedabad - 380060</p>
               </div>
             </div>
           </div>
@@ -303,8 +310,9 @@ export default function HomePage() {
 
       <footer className="footer">
         <div className="container footer-inner">
-          <p>Nexora Global Industries Pvt Ltd — Manufacturer and exporter of premium tile adhesives, epoxies, grouts, plaster, and waterproofing.</p>
-          <p>Built for professionals, ready for Vercel deployment.</p>
+          <p>Marketed & Manufactured By: Nexora Global Industries Pvt Ltd</p>
+          <p>Shade No 2, SURVEY NO-1525/119, Near Navkar Heights, off. S.P. Ring Road, Ognaj, Ahmedabad - 380060</p>
+          <p>Customer care: +91 92748 58900 | sales@nexoraindia.org | info@nexoraindia.org</p>
         </div>
       </footer>
     </main>
