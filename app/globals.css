@@ -130,6 +130,11 @@ img { max-width: 100%; display: block; }
   @apply py-14 bg-cream-50;
 }
 
+/* Form inputs */
+.form-input {
+  @apply w-full px-5 py-3.5 rounded-xl border border-black/10 bg-white text-ink placeholder-muted font-medium focus:outline-none focus:border-nx-600 focus:ring-2 focus:ring-nx-600/20 transition-all;
+}
+
 /* Section decoration */
 .section-deco {
   position: relative;
