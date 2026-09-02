@@ -117,6 +117,11 @@ img { max-width: 100%; display: block; }
   @apply bg-gradient-to-r from-nx-600 to-nx-700 text-white border-transparent shadow-md shadow-nx-600/20;
 }
 
+/* Badge */
+.badge {
+  @apply inline-flex items-center gap-2 bg-nx-600/10 text-nx-700 px-5 py-2.5 rounded-full text-sm font-bold;
+}
+
 /* Section decoration */
 .section-deco {
   position: relative;
