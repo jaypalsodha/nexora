@@ -122,6 +122,14 @@ img { max-width: 100%; display: block; }
   @apply inline-flex items-center gap-2 bg-nx-600/10 text-nx-700 px-5 py-2.5 rounded-full text-sm font-bold;
 }
 
+/* Sections */
+.section {
+  @apply py-14;
+}
+.section-alt {
+  @apply py-14 bg-cream-50;
+}
+
 /* Section decoration */
 .section-deco {
   position: relative;
