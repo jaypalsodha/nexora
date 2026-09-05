@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
+import { useToast } from "../../components/ToastContext";
 
 export default function AboutPage() {
+  const { showToast } = useToast();
+
   return (
     <main>
       <section className="relative pt-24 pb-16 overflow-hidden">
@@ -116,6 +119,40 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-ink mb-3">{pillar.title}</h3>
                 <p className="text-muted leading-relaxed">{pillar.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications & Quality */}
+      <section className="section">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16 animate-fadeInUp">
+            <span className="badge">Quality & Certification</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-ink mt-4 mb-4">
+              Built to international standards.
+            </h2>
+            <p className="text-muted text-lg">
+              Our manufacturing processes and quality control systems ensure every product meets the demands of global markets.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "ISO Certified", desc: "Quality management systems verified", icon: "🏅" },
+              { title: "Export Ready", desc: "Products packaged for international supply chains", icon: "📦" },
+              { title: "Batch Testing", desc: "Every batch undergoes rigorous quality checks", icon: "🧪" },
+              { title: "Technical Support", desc: "On-site guidance for every project", icon: "🛠️" },
+            ].map((item, i) => (
+              <article
+                key={item.title}
+                className="p-6 bg-white/80 border border-black/5 rounded-2xl card-lift animate-fadeInUp text-center"
+                style={{ animationDelay: `${i * 0.08}s` }}
+              >
+                <div className="text-4xl mb-3">{item.icon}</div>
+                <h3 className="text-lg font-bold text-ink mb-2">{item.title}</h3>
+                <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
               </article>
             ))}
           </div>

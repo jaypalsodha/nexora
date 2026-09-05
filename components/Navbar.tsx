@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { useToast } from "./ToastContext";
 
 const links = [
   { href: "#hero", label: "Home" },
@@ -14,9 +15,15 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const { showToast } = useToast();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      setShowBackToTop(y > 500);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -29,6 +36,11 @@ export default function Navbar() {
     }
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    showToast("Scrolled to top");
+  }, [showToast]);
 
   return (
     <>
@@ -119,6 +131,19 @@ export default function Navbar() {
             </a>
           </div>
         </div>
+      )}
+
+      {/* Back to Top */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-24 lg:right-6 z-50 w-12 h-12 rounded-full bg-nx-600 text-white shadow-lg hover:bg-nx-700 hover:scale-110 transition-all flex items-center justify-center animate-fadeInUp"
+          aria-label="Back to top"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
       )}
     </>
   );

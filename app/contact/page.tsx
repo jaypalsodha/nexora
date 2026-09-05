@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
+import { useToast } from "../../components/ToastContext";
 
 export default function ContactPage() {
+  const { showToast } = useToast();
+
   return (
     <main>
       <section className="relative pt-24 pb-16 overflow-hidden">
@@ -57,6 +60,7 @@ export default function ContactPage() {
                     title: "Phone",
                     items: [
                       { label: "Customer care", href: "tel:+919274858900", value: "+91 92748 58900" },
+                      { label: "WhatsApp", href: "https://wa.me/919274858900", value: "+91 92748 58900" },
                     ],
                   },
                   {
@@ -117,6 +121,7 @@ export default function ContactPage() {
                     const subject = encodeURIComponent("Nexora Product Inquiry");
                     const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nEmail: ${email}\nProject details: ${details}`);
                     window.location.href = `mailto:sales@nexoraindia.org?subject=${subject}&body=${body}`;
+                    showToast("Inquiry sent! We'll get back to you within 24 hours.", "success");
                   }}
                 >
                   <div className="grid sm:grid-cols-2 gap-5">
@@ -141,6 +146,24 @@ export default function ContactPage() {
                     Send inquiry
                   </button>
                 </form>
+              </div>
+
+              {/* FAQ */}
+              <div className="mt-8 bg-white/80 border border-black/5 rounded-3xl p-6 md:p-8">
+                <h4 className="font-bold text-ink mb-4 text-lg">Frequently Asked Questions</h4>
+                <div className="space-y-4">
+                  {[
+                    { q: "Do you offer technical support on-site?", a: "Yes, our technical team provides on-site guidance for all major projects." },
+                    { q: "What is the minimum order quantity?", a: "We cater to both small and large orders. Contact us for details." },
+                    { q: "Do you have export documentation?", a: "Yes, all products come with full export documentation including TDS and MSDS." },
+                    { q: "What is the typical delivery time?", a: "Within 7-15 days depending on order size and destination." },
+                  ].map((faq, i) => (
+                    <div key={i} className="border-b border-black/5 pb-3 last:border-0 last:pb-0">
+                      <h5 className="font-bold text-ink text-sm mb-1">{faq.q}</h5>
+                      <p className="text-muted text-sm leading-relaxed">{faq.a}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Office hours */}

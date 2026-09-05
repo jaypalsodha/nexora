@@ -5,10 +5,12 @@ import Link from "next/link";
 import { applications, categories, filterCategories, pillars, products, stats, testimonials, trustPoints } from "../lib/data";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useToast } from "../components/ToastContext";
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [contact, setContact] = useState({ name: "", company: "", email: "", details: "" });
+  const { showToast } = useToast();
 
   const visibleProducts = useMemo(
     () =>
@@ -30,6 +32,7 @@ export default function HomePage() {
       `Name: ${contact.name}\nCompany: ${contact.company}\nEmail: ${contact.email}\nProject details: ${contact.details}`
     );
     window.location.href = `mailto:sales@nexoraindia.org?subject=${subject}&body=${body}`;
+    showToast("Inquiry sent! We'll get back to you soon.", "success");
   };
 
   return (
