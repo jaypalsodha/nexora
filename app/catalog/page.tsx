@@ -51,7 +51,10 @@ export default function CatalogPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <a href="/nexora-catalog.txt" download className="btn-primary">
-                Download full catalog
+                Download full catalog (text)
+              </a>
+              <a href="/nexora_product_catalogue.pdf" download className="btn-primary ml-4">
+                Download product catalogue (PDF)
               </a>
               <button type="button" className="btn-secondary" onClick={handlePrint}>
                 Print brochure

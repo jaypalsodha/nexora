@@ -56,6 +56,9 @@ module.exports = {
         accent: "0 20px 40px rgba(236, 119, 35, 0.2)",
         innerSoft: "inset 0 1px 0 rgba(255,255,255,0.9)",
       },
+      height: {
+        '13rem': '13rem',
+      },
       borderRadius: {
         "4xl": "2rem",
         "5xl": "2.5rem",

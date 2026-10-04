@@ -170,7 +170,7 @@ export default function AboutPage() {
                 Ready to start your next project? Reach out to our team today and discover why
                 contractors and distributors worldwide trust Nexora.
               </p>
-              <a href="#contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-nx-700 font-bold hover:bg-cream-50 hover:shadow-lg transition-all active:scale-95">
+              <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-nx-700 font-bold hover:bg-cream-50 hover:shadow-lg transition-all active:scale-95">
                 Get in touch →
               </a>
             </div>

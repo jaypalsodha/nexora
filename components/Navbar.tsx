@@ -5,11 +5,11 @@ import Link from "next/link";
 import { useToast } from "./ToastContext";
 
 const links = [
-  { href: "#hero", label: "Home" },
+  { href: "/", label: "Home" },
   { href: "#products", label: "Products" },
-  { href: "#categories", label: "Solutions" },
+  { href: "/about", label: "About" },
   { href: "/catalog", label: "Catalog" },
-  { href: "#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -53,17 +53,11 @@ export default function Navbar() {
       >
         <nav className="max-w-7xl mx-auto px-6 h-16 lg:h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-nx-600 to-nx-700 flex items-center justify-center shadow-md shadow-nx-600/20 group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold text-lg">N</span>
-            </div>
-            <div>
-              <span className="text-xl font-extrabold tracking-tight text-ink block leading-none">
-                Nexora
-              </span>
-              <span className="text-[10px] font-bold text-nx-600 tracking-widest uppercase">
-                Innovation that builds the future
-              </span>
-            </div>
+            <img
+                src="/NEXORA%20Logo%20Final-01.svg"
+                alt="Nexora"
+                style={{ height: "13rem", width: "auto" }}
+              />
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
